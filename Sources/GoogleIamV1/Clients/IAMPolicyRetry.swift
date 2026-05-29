@@ -59,7 +59,8 @@ extension Clients {
         options: options,
         idempotent: false,
         action: {
-          (r: SetIamPolicyRequest, o: GoogleCloudGax.RequestOptions) async throws -> Policy
+          (r: SetIamPolicyRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleIamV1.Policy
           in
           return try await self.inner.setIamPolicy(request: r, options: o)
         })
@@ -73,7 +74,8 @@ extension Clients {
         options: options,
         idempotent: false,
         action: {
-          (r: GetIamPolicyRequest, o: GoogleCloudGax.RequestOptions) async throws -> Policy
+          (r: GetIamPolicyRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleIamV1.Policy
           in
           return try await self.inner.getIamPolicy(request: r, options: o)
         })
@@ -88,7 +90,7 @@ extension Clients {
         idempotent: false,
         action: {
           (r: TestIamPermissionsRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> TestIamPermissionsResponse
+            -> GoogleIamV1.TestIamPermissionsResponse
           in
           return try await self.inner.testIamPermissions(request: r, options: o)
         })

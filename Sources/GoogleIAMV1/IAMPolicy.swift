@@ -69,7 +69,7 @@ public class IAMPolicyClient: Clients.IAMPolicyProtocol {
   /// @Snippet(path: "IAMPolicy_SetIamPolicy")
   public func setIamPolicy(
     request: SetIamPolicyRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleIamV1.Policy {
+  ) async throws -> GoogleIAMV1.Policy {
     try await self.inner.setIamPolicy(request: request, options: options)
   }
 
@@ -80,7 +80,7 @@ public class IAMPolicyClient: Clients.IAMPolicyProtocol {
   /// @Snippet(path: "IAMPolicy_GetIamPolicy")
   public func getIamPolicy(
     request: GetIamPolicyRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleIamV1.Policy {
+  ) async throws -> GoogleIAMV1.Policy {
     try await self.inner.getIamPolicy(request: request, options: options)
   }
 
@@ -95,7 +95,7 @@ public class IAMPolicyClient: Clients.IAMPolicyProtocol {
   /// @Snippet(path: "IAMPolicy_TestIamPermissions")
   public func testIamPermissions(
     request: TestIamPermissionsRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleIamV1.TestIamPermissionsResponse {
+  ) async throws -> GoogleIAMV1.TestIamPermissionsResponse {
     try await self.inner.testIamPermissions(request: request, options: options)
   }
 }
@@ -108,63 +108,63 @@ extension Clients {
   /// and pass a mock implementation in your tests.
   public protocol IAMPolicyProtocol {
     /// See `IAMPolicyClient.setIamPolicy`.
-    func setIamPolicy(request: SetIamPolicyRequest) async throws -> GoogleIamV1.Policy
+    func setIamPolicy(request: SetIamPolicyRequest) async throws -> GoogleIAMV1.Policy
 
     /// See `IAMPolicyClient.getIamPolicy`.
-    func getIamPolicy(request: GetIamPolicyRequest) async throws -> GoogleIamV1.Policy
+    func getIamPolicy(request: GetIamPolicyRequest) async throws -> GoogleIAMV1.Policy
 
     /// See `IAMPolicyClient.testIamPermissions`.
     func testIamPermissions(request: TestIamPermissionsRequest) async throws
-      -> GoogleIamV1.TestIamPermissionsResponse
+      -> GoogleIAMV1.TestIamPermissionsResponse
 
     /// See `IAMPolicyClient.setIamPolicy`.
     func setIamPolicy(
       request: SetIamPolicyRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleIamV1.Policy
+    ) async throws -> GoogleIAMV1.Policy
 
     /// See `IAMPolicyClient.getIamPolicy`.
     func getIamPolicy(
       request: GetIamPolicyRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleIamV1.Policy
+    ) async throws -> GoogleIAMV1.Policy
 
     /// See `IAMPolicyClient.testIamPermissions`.
     func testIamPermissions(
       request: TestIamPermissionsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleIamV1.TestIamPermissionsResponse
+    ) async throws -> GoogleIAMV1.TestIamPermissionsResponse
   }
 }
 
 // Default implementations
 extension Clients.IAMPolicyProtocol {
-  public func setIamPolicy(request: SetIamPolicyRequest) async throws -> GoogleIamV1.Policy {
+  public func setIamPolicy(request: SetIamPolicyRequest) async throws -> GoogleIAMV1.Policy {
     try await self.setIamPolicy(request: request, options: .init())
   }
 
   public func setIamPolicy(
     request: SetIamPolicyRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleIamV1.Policy {
+  ) async throws -> GoogleIAMV1.Policy {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
-  public func getIamPolicy(request: GetIamPolicyRequest) async throws -> GoogleIamV1.Policy {
+  public func getIamPolicy(request: GetIamPolicyRequest) async throws -> GoogleIAMV1.Policy {
     try await self.getIamPolicy(request: request, options: .init())
   }
 
   public func getIamPolicy(
     request: GetIamPolicyRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleIamV1.Policy {
+  ) async throws -> GoogleIAMV1.Policy {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func testIamPermissions(request: TestIamPermissionsRequest) async throws
-    -> GoogleIamV1.TestIamPermissionsResponse
+    -> GoogleIAMV1.TestIamPermissionsResponse
   {
     try await self.testIamPermissions(request: request, options: .init())
   }
 
   public func testIamPermissions(
     request: TestIamPermissionsRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleIamV1.TestIamPermissionsResponse {
+  ) async throws -> GoogleIAMV1.TestIamPermissionsResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 }
